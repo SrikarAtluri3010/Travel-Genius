@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Genius - Support & Help Center</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+    <div class="navbar-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="search.html" class="nav-link">Search & Book</a>
+      <a href="trips.html" class="nav-link">My Trips</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="support.html" class="nav-link active-link">Support</a>
+    </div>
+  </nav>
+
+  <!-- Support Container -->
+  <div class="container fadeIn">
+    <h2 class="header">Support & Help Center</h2>
+    <p class="subheading">Need assistance? Find answers to common questions or contact our team directly.</p>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+
+      <div class="faq-card">
+        <h4>How do I cancel a booking?</h4>
+        <p>Navigate to 'My Trips', select the booking you want to cancel, and click the 'Cancel' button. Make sure to check the cancellation policy for refunds.</p>
+      </div>
+
+      <div class="faq-card">
+        <h4>How can I modify my travel dates?</h4>
+        <p>In 'My Trips', choose 'Modify' on the booking you wish to change. Follow the steps to select a new date based on availability.</p>
+      </div>
+
+      <div class="faq-card">
+        <h4>What if I don't receive my booking confirmation?</h4>
+        <p>Check your spam or junk folder. If not found, contact support via chat or email, and we will resend the confirmation.</p>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <h3>Contact Our Support Team</h3>
+      <p>For issues not covered in the FAQs, reach out to us directly:</p>
+      <p>📧 Email: support@travelgenius.com</p>
+      <p>💬 Live Chat: Available 24/7 via the chat icon on the bottom-right of your screen.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+  <div class="chat-support">
+    <button class="chat-toggle" id="chatToggle">💬 Chat</button>
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <h4>Support Chat</h4>
+        <button id="closeChat" class="close-chat">✖</button>
+      </div>
+      <div class="chat-messages">
+        <p class="bot-message">Hello! How can I assist you today? 😊</p>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message..." />
+        <button id="sendMessage">Send</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  // Toggle Chat Box Open/Close
+  const chatToggle = document.getElementById('chatToggle');
+  const chatBox = document.getElementById('chatBox');
+  const closeChat = document.getElementById('closeChat');
+  const sendMessage = document.getElementById('sendMessage');
+  const userMessage = document.getElementById('userMessage');
+  const chatMessages = document.querySelector('.chat-messages');
+  
+  chatToggle.addEventListener('click', () => {
+    chatBox.style.display = 'flex';
+  });
+  
+  closeChat.addEventListener('click', () => {
+    chatBox.style.display = 'none';
+  });
+  
+  sendMessage.addEventListener('click', () => {
+    if (userMessage.value.trim() !== "") {
+      const userMsg = document.createElement('p');
+      userMsg.classList.add('bot-message');
+      userMsg.style.backgroundColor = '#d1ffd6';
+      userMsg.textContent = userMessage.value;
+      chatMessages.appendChild(userMsg);
+      userMessage.value = "";
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+  </script>
+  
+</html>

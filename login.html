@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Travel Genius</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+  </nav>
+
+  <!-- Login Form -->
+  <div class="container fadeIn">
+    <h2 class="header">Welcome Back!</h2>
+    <p class="subheading">Login to manage your travel plans.</p>
+
+    <form class="search-form" onsubmit="redirectToIndex(event)">
+      <label for="email">Email or Phone:</label>
+      <input type="text" id="email" name="email" placeholder="Enter your email or phone" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <button type="submit" class="button">Login</button>
+      <p style="text-align:center; margin-top:15px;">
+        Don't have an account? <a href="registration.html">Register here</a>
+      </p>
+    </form>
+  </div>
+
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+
+  <script>
+    function redirectToIndex(e) {
+      e.preventDefault();
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

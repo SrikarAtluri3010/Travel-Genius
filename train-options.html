@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Genius - Train Options</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 🟦 Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+    <div class="navbar-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="search.html" class="nav-link active-link">Search & Book</a>
+      <a href="trips.html" class="nav-link">My Trips</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+
+  <!-- 🚆 Train Options Content -->
+  <div class="container fadeIn">
+    <h2 class="header">🚆 Available Train Options</h2>
+    <p class="subheading">Choose a train that suits your journey. Filter options are for display only.</p>
+
+    <!-- 🎯 Filter Display (Non-functional) -->
+    <div class="filters-section">
+      <h3>Filter Your Train Search</h3>
+      <form class="filters-form">
+        <div class="filter-group">
+          <label for="price">Price Range:</label>
+          <select id="price">
+            <option value="all">All</option>
+            <option value="below-50">$0 - $50</option>
+            <option value="50-100">$50 - $100</option>
+            <option value="above-100">$100+</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="departure-time">Departure Time:</label>
+          <select id="departure-time">
+            <option value="all">All Times</option>
+            <option value="morning">Morning (5 AM - 12 PM)</option>
+            <option value="afternoon">Afternoon (12 PM - 6 PM)</option>
+            <option value="evening">Evening (6 PM - 12 AM)</option>
+            <option value="night">Night (12 AM - 5 AM)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="class">Class:</label>
+          <select id="class">
+            <option value="all">All Classes</option>
+            <option value="sleeper">Sleeper</option>
+            <option value="ac">AC</option>
+            <option value="first">First Class</option>
+          </select>
+        </div>
+
+        <button type="button" class="button filter-button" disabled>Filters (Static)</button>
+      </form>
+    </div>
+
+    <!-- 🚄 Train Options List -->
+    <div class="flight-results">
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>NYC to Boston - Express Rail</h4>
+          <p>🚆 Departure: 8:00 AM |🚆 Arrival: 11:00 AM | 💲 $45 | 🪑 Sleeper</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>NYC to Boston - Northeast AC</h4>
+          <p>🚆 Departure: 1:00 PM |🚆 Arrival: 4:00 PM | 💲 $75 | 🪑 AC</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>NYC to Boston - First Class Rail</h4>
+          <p>🚆 Departure: 6:00 PM | 🚆 Arrival: 9:00 PM | 💲 $120 | 🪑 First Class</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+</body>
+</html>

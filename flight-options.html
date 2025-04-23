@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Genius - Flight Options</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 🟦 Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+    <div class="navbar-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="search.html" class="nav-link active-link">Search & Book</a>
+      <a href="trips.html" class="nav-link">My Trips</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+
+  <!-- ✈️ Flight Options Content -->
+  <div class="container fadeIn">
+    <h2 class="header">✨ Available Flight Options ✈️</h2>
+    <p class="subheading">Select the best flight for your journey. Use filters to customize your view.</p>
+
+    <!-- 🎯 Filter Section -->
+    <div class="filters-section">
+      <h3>Filter Your Flight Search</h3>
+      <form class="filters-form">
+        <div class="filter-group">
+          <label for="price">Price Range:</label>
+          <select id="price">
+            <option value="all">All</option>
+            <option value="below-200">$0 - $200</option>
+            <option value="200-500">$200 - $500</option>
+            <option value="above-500">$500+</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="departure-time">Departure Time:</label>
+          <select id="departure-time">
+            <option value="all">All Times</option>
+            <option value="morning">Morning (5 AM - 12 PM)</option>
+            <option value="afternoon">Afternoon (12 PM - 6 PM)</option>
+            <option value="evening">Evening (6 PM - 12 AM)</option>
+            <option value="night">Night (12 AM - 5 AM)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="airline">Airline:</label>
+          <select id="airline">
+            <option value="all">All Airlines</option>
+            <option value="airline-xyz">Airline XYZ</option>
+            <option value="sky-air">Sky Air</option>
+            <option value="fly-high">Fly High Airlines</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="class">Class:</label>
+          <select id="class">
+            <option value="all">All Classes</option>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First Class</option>
+          </select>
+        </div>
+
+        <button type="submit" class="button filter-button">Apply Filters</button>
+      </form>
+    </div>
+
+    <!-- 🚀 Flight Options -->
+    <div class="flight-results">
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>NYC to LA - Airline XYZ</h4>
+          <p>🛫 Departure: 10:00 AM | 🛬 Arrival: 1:00 PM | 💲 $250 | 🪑 Economy</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>NYC to LA - Sky Air</h4>
+          <p>🛫 Departure: 2:00 PM | 🛬 Arrival: 5:00 PM | 💲 $400 | 🪑 Business</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>NYC to LA - Fly High Airlines</h4>
+          <p>🛫 Departure: 7:00 PM | 🛬 Arrival: 10:00 PM | 💲 $550 | 🪑 First Class</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+</body>
+<!-- Add this script at the bottom before </body> -->
+<script>
+  // Fade-in animation on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".container").classList.add("fade-in-active");
+  });
+  
+  // Filter Logic
+  const filterForm = document.querySelector('.filters-form');
+  const flightCards = document.querySelectorAll('.result-card');
+  
+  filterForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    const selectedPrice = document.getElementById('price').value;
+    const selectedTime = document.getElementById('departure-time').value;
+    const selectedAirline = document.getElementById('airline').value;
+    const selectedClass = document.getElementById('class').value;
+  
+    flightCards.forEach(card => {
+      const infoText = card.querySelector('p').textContent.toLowerCase();
+      let isVisible = true;
+  
+      // Price Filter Logic
+      if (selectedPrice !== 'all') {
+        if (selectedPrice === 'below-200' && !infoText.includes('$') || parseInt(infoText.match(/\$(\d+)/)[1]) >= 200) {
+          isVisible = false;
+        }
+        if (selectedPrice === '200-500' && (parseInt(infoText.match(/\$(\d+)/)[1]) < 200 || parseInt(infoText.match(/\$(\d+)/)[1]) > 500)) {
+          isVisible = false;
+        }
+        if (selectedPrice === 'above-500' && parseInt(infoText.match(/\$(\d+)/)[1]) <= 500) {
+          isVisible = false;
+        }
+      }
+  
+      // Time Filter Logic
+      if (selectedTime !== 'all') {
+        if (selectedTime === 'morning' && !infoText.includes('am')) isVisible = false;
+        if (selectedTime === 'afternoon' && !infoText.includes('pm')) isVisible = false;
+        if (selectedTime === 'evening' && !infoText.includes('pm')) isVisible = false;
+        if (selectedTime === 'night' && !infoText.includes('am')) isVisible = false;
+      }
+  
+      // Airline Filter
+      if (selectedAirline !== 'all' && !infoText.includes(selectedAirline.replace(/-/g, ' '))) {
+        isVisible = false;
+      }
+  
+      // Class Filter
+      if (selectedClass !== 'all' && !infoText.includes(selectedClass)) {
+        isVisible = false;
+      }
+  
+      card.style.display = isVisible ? 'flex' : 'none';
+    });
+  });
+  </script>
+</html>
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Genius - Cruise Options</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+    <div class="navbar-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="search.html" class="nav-link active-link">Search & Book</a>
+      <a href="trips.html" class="nav-link">My Trips</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+
+  <div class="container fadeIn">
+    <h2 class="header">🛳️ Available Cruise Options</h2>
+    <p class="subheading">Set sail on your next adventure. Find luxury and leisure on board.</p>
+
+    <div class="filters-section">
+      <h3>Filter Your Cruise Search</h3>
+      <form class="filters-form">
+        <div class="filter-group">
+          <label for="duration">Cruise Duration:</label>
+          <select id="duration">
+            <option value="all">All</option>
+            <option value="short">1-3 Days</option>
+            <option value="medium">4-7 Days</option>
+            <option value="long">8+ Days</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="cabin">Cabin Type:</label>
+          <select id="cabin">
+            <option value="all">All</option>
+            <option value="inside">Inside</option>
+            <option value="balcony">Balcony</option>
+            <option value="suite">Suite</option>
+          </select>
+        </div>
+
+        <button type="button" class="button filter-button" disabled>Filters (Static)</button>
+      </form>
+    </div>
+
+    <div class="flight-results">
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>Miami to Bahamas - Ocean Breeze</h4>
+          <p>🛳️ Departure: June 10 | ⏱ 3 Days | 💲 $350 | 🪑 Balcony</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+
+      <div class="result-card">
+        <div class="flight-info">
+          <h4>Miami to Caribbean - Island Dream</h4>
+          <p>🛳️ Departure: July 15 | ⏱ 7 Days | 💲 $850 | 🪑 Suite</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+</body>
+</html>

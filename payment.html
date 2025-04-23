@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Genius - Payment Gateway</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+    <div class="navbar-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="search.html" class="nav-link active-link">Search & Book</a>
+      <a href="trips.html" class="nav-link">My Trips</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+
+  <!-- Payment Gateway Section -->
+  <div class="container fadeIn">
+    <h2 class="header">Secure Payment Gateway 💳</h2>
+    <p class="subheading">Complete your booking by entering your payment details below.</p>
+
+    <form class="payment-form">
+      <label for="card-name">Cardholder Name:</label>
+      <input type="text" id="card-name" placeholder="Traveller" required />
+
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required />
+
+      <div class="payment-details">
+        <div>
+          <label for="expiry">Expiry Date:</label>
+          <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required />
+        </div>
+        <div>
+          <label for="cvv">CVV:</label>
+          <input type="password" id="cvv" placeholder="***" maxlength="4" required />
+        </div>
+      </div>
+
+      <button type="submit" class="button">Confirm & Pay</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+</body>
+</html>

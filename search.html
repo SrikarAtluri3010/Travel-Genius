@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Genius - Search & Book</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+    <div class="navbar-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="search.html" class="nav-link active-link">Search & Book</a>
+      <a href="trips.html" class="nav-link">My Trips</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+
+  <!-- Search Container -->
+  <div class="container fadeIn">
+    <h2 class="header">Search & Book Your Travel</h2>
+    <p class="subheading">Find the best travel options by selecting your preferences below.</p>
+
+    <form class="search-form" onsubmit="redirectToOptions(event)">
+      <label for="from">From:</label>
+      <input type="text" id="from" placeholder="Enter departure city" required />
+    
+      <label for="to">To:</label>
+      <input type="text" id="to" placeholder="Enter destination city" required />
+    
+      <label for="date">Travel Date:</label>
+      <input type="date" id="date" required />
+    
+      <label for="mode">Mode of Transport:</label>
+      <select id="mode" required>
+        <option value="">Select Mode</option>
+        <option value="flight">Flight</option>
+        <option value="train">Train</option>
+        <option value="bus">Bus</option>
+        <option value="cruise">Cruise</option>
+      </select>
+    
+      <button type="submit" class="button">Search Now</button>
+    </form>
+
+    <!-- Search Results Placeholder -->
+    <div class="search-results">
+      <h3>Available Options (Sample Placeholder)</h3>
+      <div class="result-card">
+        <div>
+          <h4>NYC to LA - Airline XYZ</h4>
+          <p>Departure: 10:00 AM | Arrival: 1:00 PM | Price: $250</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+
+      <div class="result-card">
+        <div>
+          <h4>NYC to LA - Train Express</h4>
+          <p>Departure: 8:00 AM | Arrival: 4:00 PM | Price: $120</p>
+        </div>
+        <a href="payment.html" class="button">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+</body>
+</html>
+
+<script>
+  function redirectToOptions(event) {
+    event.preventDefault();
+    const mode = document.getElementById('mode').value;
+
+    if (!mode) {
+      alert("Please select a mode of transport.");
+      return;
+    }
+
+    // Redirect based on selected mode
+    window.location.href = `${mode}-options.html`;
+  }
+</script>

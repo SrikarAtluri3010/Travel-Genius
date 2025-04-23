@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Genius - My Trips</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Travel Genius Logo" class="logo" />
+      </div>
+      <h1>Travel Genius</h1>
+    </div>
+    <div class="navbar-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="search.html" class="nav-link">Search & Book</a>
+      <a href="trips.html" class="nav-link active-link">My Trips</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+
+  <!-- Trips Container -->
+  <div class="container fadeIn">
+    <h2 class="header">Manage Your Trips</h2>
+    <p class="subheading">View, modify, or cancel your upcoming bookings below.</p>
+    <div class="reminder-section fadeIn">
+      <h3>Set Courtesy Reminder for Your Trips 🛎️</h3>
+      <p class="subheading">Get notified before your travel date. Customize your reminder timings below.</p>
+    
+      <form class="reminder-form">
+        <label for="trip-select">Select Trip:</label>
+        <select id="trip-select" required>
+          <option value="">Choose your trip</option>
+          <option value="nyc-la-flight">NYC to LA - Airline XYZ</option>
+          <option value="nyc-la-train">NYC to LA - Train Express</option>
+          <option value="nyc-miami-bus">NYC to Miami - Bus Rapid</option>
+        </select>
+    
+        <label for="reminder-time">Reminder Time (before departure):</label>
+        <select id="reminder-time" required>
+          <option value="">Choose time</option>
+          <option value="1-hour">1 Hour Before</option>
+          <option value="6-hours">6 Hours Before</option>
+          <option value="12-hours">12 Hours Before</option>
+          <option value="24-hours">24 Hours Before</option>
+        </select>
+    
+        <button type="submit" class="button">Set Reminder</button>
+      </form>
+    </div>
+
+    <div class="trip-card">
+      <div class="trip-info">
+        <h4>NYC to LA - Airline XYZ</h4>
+        <p>Departure: May 20, 2025 | 10:00 AM | Status: Confirmed</p>
+      </div>
+      <div class="trip-actions">
+        <button class="button">Modify</button>
+        <button class="button cancel-button">Cancel</button>
+      </div>
+    </div>
+
+    <div class="trip-card">
+      <div class="trip-info">
+        <h4>NYC to LA - Train Express</h4>
+        <p>Departure: May 21, 2025 | 08:00 AM | Status: Confirmed</p>
+      </div>
+      <div class="trip-actions">
+        <button class="button">Modify</button>
+        <button class="button cancel-button">Cancel</button>
+      </div>
+    </div>
+
+    <div class="trip-card">
+      <div class="trip-info">
+        <h4>NYC to Miami - Bus Rapid</h4>
+        <p>Departure: May 25, 2025 | 06:00 AM | Status: Confirmed</p>
+      </div>
+      <div class="trip-actions">
+        <button class="button">Modify</button>
+        <button class="button cancel-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Travel Genius. All rights reserved.
+  </footer>
+</body>
+</html>
